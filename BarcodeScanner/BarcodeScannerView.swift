@@ -9,8 +9,13 @@ import SwiftUI
 
 struct BarcodeScannerView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            VStack {
+                Rectangle()
+                    .frame(maxWidth: .infinity, maxHeight: 300)
+            }
+            .navigationTitle("Barcode Scanner")
+        }
     }
 }
 
