@@ -52,7 +52,15 @@ final class ScannerVC: UIViewController {
             captureSession.addOutput(metaDataOutput)
             metaDataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             metaDataOutput.metadataObjectTypes = [.ean8, .ean13]
+        } else {
+            return
         }
+        
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        previewLayer!.videoGravity = .resizeAspectFill
+        view.layer.addSublayer(previewLayer!)
+        
+        captureSession.startRunning()
     }
 }
 
