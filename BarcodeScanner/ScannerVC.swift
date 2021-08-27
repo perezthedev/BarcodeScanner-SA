@@ -8,6 +8,11 @@
 import UIKit
 import AVFoundation
 
+enum CameraError: String {
+    case invalidDeviceInput = "Something is wrong with the camera."
+    case invalidScannedValue = "The value scanned is not valid."
+}
+
 protocol ScannerVCDelegate: class {
     func didFind(barcode: String)
 }
