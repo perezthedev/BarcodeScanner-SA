@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ScannerView: UIViewControllerRepresentable {
     
+    @Binding var scannedCode: String
+    
     func makeUIViewController(context: Context) -> ScannerVC {
         ScannerVC(scannerDelegate: context.coordinator)
     }
@@ -34,6 +36,6 @@ struct ScannerView: UIViewControllerRepresentable {
 
 struct ScannerView_Previews: PreviewProvider {
     static var previews: some View {
-        ScannerView()
+        ScannerView(scannedCode: .constant("1234"))
     }
 }
